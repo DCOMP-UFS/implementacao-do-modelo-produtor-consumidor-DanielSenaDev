@@ -116,7 +116,7 @@ void *startProducerThread(void* args) {
       Clock clock = {rand()%100,rand()%100,rand()%100};
       printf("produziu %d %d %d \n",clock.p[0],clock.p[1],clock.p[2]);
       submitTask(clock);
-      sleep(rand()%5);
+      sleep(rand()%5); //Taxa do Produtor
    }
    return NULL;
 } 
@@ -125,7 +125,7 @@ void *startConsumerThread(void* args) {
    for(int i=0;i<50;i++){
       Clock clock = getTask();
       executeTask(&clock, id);
-      sleep(rand()%2);
+      sleep(rand()%2); // Taxa do Executor
    }
    return NULL;
 } 
